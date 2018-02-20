@@ -1,34 +1,12 @@
-int led1 =4;
-int led2 =5;
-int led3 =6;
-int led4 =7;
+### Team members:
 
-void setup(){
-  pinMode (led1,output)
-  pinMode (led2,output)
-  pinMode (led3,output)
-  pinMode (led4,output)
-  
-  
-}
-void loop()
-{
-
-  digitalWrite(led1, HIGH);   
-  delay(1000);                  
-  digitalWrite(led1, LOW);    
-  delay(1000); 
-  digitalWrite(led2, HIGH);   
-  delay(1000);                  
-  digitalWrite(led2, LOW);    
-  delay(1000);   
-digitalWrite(led3, HIGH);   
-  delay(1000);                  
-  digitalWrite(led3, LOW);    
-  delay(1000);
-  digitalWrite(led4, HIGH);   
-  delay(1000);                  
-  digitalWrite(led4, LOW);    
-  delay(1000);  
-
-}
+رقم الجلوس | Name | Section
+----------- | ---- | -------
+23031 | أحمد خالد فكري عبداللاه | 1
+23029 | احمد خالد احمد قرامان | 1
+23015 | أحمد أسامه محمد خيري عبد الرؤوف | 1
+23023 | أحمد جمال محمود عبد الفتاح | 1
+23047 | أحمد عادل محمد عبدالحميد | 1
+23066 | أحمد محمد السيد عبدالله | 2
+23295 | ضحي كمال أحمد | 5
+23294 | صلاح سليمان السيد | 5
