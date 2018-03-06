@@ -1,0 +1,69 @@
+
+#include<SoftwareSerial.h>
+SoftwareSerial car (9,10) ;
+int Left_Input1 = 2 ;
+int Left_Input2 = 3 ;
+int Right_Input1 = 4 ;
+int Right_Input2 = 5 ;
+int Right_pmw = 6 ;
+int Left_pmw = 7 ;
+char control ;
+
+
+void setup() {
+  // put your setup code here, to run once:
+  Serial.begin(9600) ;
+  car.begin(9600) ;
+  pinMode ( Left_Input1 , OUTPUT ) ;
+  pinMode ( Left_Input2 , OUTPUT ) ;
+  pinMode ( Right_Input1 , OUTPUT ) ;
+  pinMode ( Right_Input2 , OUTPUT ) ;
+  
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  if ( car.available() == 1 )
+  {
+    control = car.read() ;
+    analogWrite(Right_pmw , 128 ) ;
+    analogWrite(Left_pmw , 128 ) ;
+    if ( control == 'f' )
+    {
+      digitalWrite ( Left_Input1 , HIGH ) ;
+      digitalWrite ( Left_Input2 , LOW ) ;
+      digitalWrite ( Right_Input1 , HIGH ) ;
+      digitalWrite ( Right_Input2 , LOW ) ;
+    }
+     else if ( control == 'b' )
+    {
+      digitalWrite ( Left_Input1 , LOW ) ;
+      digitalWrite ( Left_Input2 , HIGH ) ;
+      digitalWrite ( Right_Input1 , LOW ) ;
+      digitalWrite ( Right_Input2 , HIGH ) ;
+    }
+     else if ( control == 'r' )
+    {
+      digitalWrite ( Left_Input1 , LOW ) ;
+      digitalWrite ( Left_Input2 , LOW ) ;
+      digitalWrite ( Right_Input1 , HIGH ) ;
+      digitalWrite ( Right_Input2 , LOW ) ;
+    }
+     else if ( control == 'l' )
+    {
+      digitalWrite ( Left_Input1 , HIGH ) ;
+      digitalWrite ( Left_Input2 , LOW ) ;
+      digitalWrite ( Right_Input1 , LOW ) ;
+      digitalWrite ( Right_Input2 , LOW ) ;
+    }
+     else if ( control == 's' )
+    {
+      digitalWrite ( Left_Input1 , LOW ) ;
+      digitalWrite ( Left_Input2 , LOW ) ;
+      digitalWrite ( Right_Input1 , LOW ) ;
+      digitalWrite ( Right_Input2 , LOW ) ;
+    }
+    }
+    delay(200) ;
+    
+  }
